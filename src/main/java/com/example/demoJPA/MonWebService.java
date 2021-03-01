@@ -32,6 +32,11 @@ public class MonWebService {
         cars.add(car);
     }*/
 
+    @PostMapping("/cars")
+    public void addCar(@RequestBody Car car){
+        carRepository.save(car);
+    }
+
     @GetMapping("/cars")
     ArrayList<Car> getListOfCars() {
         return cars;
